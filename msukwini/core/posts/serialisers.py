@@ -7,7 +7,6 @@ class PostListSerialiser(serializers.ModelSerializer):
         model = Post
         fields = (
             "object_id",
-            "user",
             "image1",
             "image2",
             "image3",

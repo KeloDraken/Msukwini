@@ -2,8 +2,8 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from core.posts.models import Post
-from core.posts.serialisers import PostListSerialiser
+from msukwini.core.posts.models import Post
+from msukwini.core.posts.serialisers import PostListSerialiser
 
 
 class PostListAPIView(APIView):

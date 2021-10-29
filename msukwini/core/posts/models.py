@@ -2,11 +2,12 @@ import os
 import sys
 
 from django.db import models
-from django.db.models.signals import post_save
+
+# from django.db.models.signals import post_save
 
 from django.utils import timezone
 
-from msukwini.utils.helpers import object_id_generator
+# from msukwini.utils.helpers import object_id_generator
 
 
 def upload_to(instance, filename):
@@ -33,11 +34,11 @@ class Post(models.Model):
         return self.object_id
 
 
-def create_post_object_id(sender, **kwargs):
-    if kwargs["created"]:
-        post = Post.objects.create(user=kwargs["instance"])
-        post.object_id = object_id_generator(size=11, model=Post)
-        post.save()
+# def create_post_object_id(sender, **kwargs):
+#     if kwargs["created"]:
+#         post = Post.objects.create(id=kwargs["instance"])
+#         post.object_id = object_id_generator(size=11, model=Post)
+#         post.save()
 
 
-post_save.connect(create_post_object_id, sender=Post)
+# post_save.connect(create_post_object_id, sender=Post)
