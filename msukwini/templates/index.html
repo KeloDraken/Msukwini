@@ -81,12 +81,12 @@
 						&copy; Samkelo Rocks (Pty) Ltd.
 					</p>
 				</div>
-				<!-- <div>
+				<div>
 					<section>
 						<h2>Get in touch</h2>
 						<form method="post" action="#">
 							<div class="fields">
-								<div class="field half">
+								<!-- <div class="field half">
 									<input type="text" name="name" id="name" placeholder="Name" />
 								</div>
 								<div class="field half">
@@ -94,7 +94,18 @@
 								</div>
 								<div class="field">
 									<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+								</div> -->
+								{% for field in form %}
+								{% if field.name == "email" or field.name == "name" %}
+								<div class="field half">
+									{{field}}
 								</div>
+								{% else %}
+								<div class="field">
+									{{field}}
+								</div>
+								{% endif %}
+								{% endfor %}
 							</div>
 							<ul class="actions">
 								<li><input type="submit" value="Send" class="primary" /></li>
@@ -102,7 +113,7 @@
 							</ul>
 						</form>
 					</section>
-				</div> -->
+				</div>
 			</div>
 		</footer>
 
