@@ -84,17 +84,9 @@
 				<div>
 					<section>
 						<h2>Get in touch</h2>
-						<form method="post" action="#">
+						<form method="post" action="{% url 'index' %}">
+							{% csrf_token %}
 							<div class="fields">
-								<!-- <div class="field half">
-									<input type="text" name="name" id="name" placeholder="Name" />
-								</div>
-								<div class="field half">
-									<input type="text" name="email" id="email" placeholder="Email" />
-								</div>
-								<div class="field">
-									<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
-								</div> -->
 								{% for field in form %}
 								{% if field.name == "email" or field.name == "name" %}
 								<div class="field half">
