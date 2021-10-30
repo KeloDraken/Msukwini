@@ -21,10 +21,14 @@ from django.conf.urls.static import static
 
 from django.contrib.auth.models import Group
 
+from msukwini.core.views import index
+
+
 urlpatterns = (
     [
         path("admin/", admin.site.urls),
         path("api/v1/posts/", include("msukwini.core.posts.urls", namespace="posts")),
+        path("", index, name="index"),
     ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

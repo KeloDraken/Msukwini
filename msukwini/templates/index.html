@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>KeloDraken - Joy Mama-Kgosiemang</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	<noscript>
+		<link rel="stylesheet" href="{% static 'css/noscript.css' %}" />
+	</noscript>
+	<meta property="og:title" content="KeloDraken">
+	<meta property="og:description" content="Joy Mama-Kgosiemang (Kelo) is a Designer & App Developer based in
+		Johannesburg, South Africa, specialising in merchandise, UX/UI, poster/social media
+		marketing design.">
+	<meta property="title" content="KeloDraken">
+	<meta property="description" content="Joy Mama-Kgosiemang (Kelo) is a Designer & App Developer based in
+		Johannesburg, South Africa, specialising in merchandise, UX/UI, poster/social media
+		marketing design.">
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1>KeloDraken</h1>
+			<nav>
+				<ul>
+					<li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+			{% for post in posts %}
+			<article class="thumb">
+				<a href="{{post.image1.url}}" class="image"><img src="{{post.image1.url}}" alt="" /></a>
+				<h2>{{ post.headline }}</h2>
+				<p>{{post.description}}</p>
+			</article>
+			{% endfor %}
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="panel">
+			<div class="inner split">
+				<div>
+					<section>
+						<h2>Msukwini, Lawu lentaba</h2>
+						<p>Joy Mama-Kgosiemang (Kelo) is a Designer & App Developer based in
+							Johannesburg, South Africa, specialising in merchandise, UX/UI, poster/social media
+							marketing design.</p>
+					</section>
+					<section>
+						<h2>Links</h2>
+						<ul class="icons">
+							<li>
+								<a href="https://twitter.com/KeloDraken" target="_blank" class="icon brands fa-twitter">
+									<span class="label">Twitter</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://instagram.com/KeloGraphics" target="_blank"
+									class="icon brands fa-instagram">
+									<span class="label">Instagram</span></a>
+							</li>
+							<li><a href="https://github.com/KeloDraken" target="_blank" class=" icon brands
+									fa-github"><span class="label">GitHub</span></a></li>
+							<li>
+								<a href="https://www.linkedin.com/in/vuyomsukwini/" target="_blank" class=" icon brands
+									fa-linkedin-in"><span class="label">LinkedIn</span></a>
+							</li>
+						</ul>
+					</section>
+					<p class="copyright">
+						&copy; Samkelo Rocks (Pty) Ltd.
+					</p>
+				</div>
+				<!-- <div>
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="text" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+								<li><input type="reset" value="Reset" /></li>
+							</ul>
+						</form>
+					</section>
+				</div> -->
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/jquery.poptrox.min.js' %}"></script>
+	<script src="{% static 'js/browser.min.js' %}"></script>
+	<script src="{% static 'js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'js/util.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
